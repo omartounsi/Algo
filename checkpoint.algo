@@ -1,0 +1,24 @@
+ALGORITHM checkpoint;
+
+VAR
+    sentence: STRING;
+    i, word, vowel, letter: INTEGER:= 0;
+
+BEGIN
+    Read(sentence);
+    WHILE (sentence[i] <> ".") DO
+        IF (sentence[i] = " ") THEN
+            word:= word + 1;
+        ELSE
+            IF (ToUpper(sentence[i] = "A") OR ToUpper(sentence[i] = "E") OR ToUpper(sentence[i] = "I") OR ToUpper(sentence[i] = "O") OR ToUpper(sentence[i] = "U") OR ToUpper(sentence[i] = "Y") OR) THEN
+                vowel:= vowel + 1;
+            ELSE
+                letter:= letter + 1;
+            END_IF
+        END_IF 
+        i:= i + 1;
+    END_WHILE
+    Write(word - 1);
+    Write(vowel);
+    Write(letter);
+END
