@@ -10,7 +10,7 @@ BEGIN
         IF (sentence[i] = " ") THEN
             word:= word + 1;
         ELSE
-            IF (ToUpper(sentence[i] = "A") OR ToUpper(sentence[i] = "E") OR ToUpper(sentence[i] = "I") OR ToUpper(sentence[i] = "O") OR ToUpper(sentence[i] = "U") OR ToUpper(sentence[i] = "Y") OR) THEN
+            IF ((sentence[i].ToUpper = "A") OR (sentence[i].ToUpper = "E") OR (sentence[i].ToUpper = "O") OR (sentence[i].ToUpper = "U") OR (sentence[i].ToUpper = "I") OR (sentence[i].ToUpper = "Y") THEN
                 vowel:= vowel + 1;
             ELSE
                 letter:= letter + 1;
