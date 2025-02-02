@@ -6,19 +6,19 @@ VAR
 
 BEGIN
     Read(sentence);
-    WHILE (sentence[i] <> ".") DO
-        IF (sentence[i] = " ") THEN
+    WHILE (sentence[i] <> ".") DO //iterating when there's no ".""
+        IF (sentence[i] = " ") THEN //if it's a space then its a finished word
             word:= word + 1;
         ELSE
             IF ((sentence[i].ToUpper = "A") OR (sentence[i].ToUpper = "E") OR (sentence[i].ToUpper = "O") OR (sentence[i].ToUpper = "U") OR (sentence[i].ToUpper = "I") OR (sentence[i].ToUpper = "Y")) THEN
-                vowel:= vowel + 1;
+                vowel:= vowel + 1; //checking if the uppsercase is a vowel
             ELSE
-                letter:= letter + 1;
+                letter:= letter + 1; //letter
             END_IF
         END_IF 
-        i:= i + 1;
+        i:= i + 1; //incrementing counter to avoid an infinite loop 
     END_WHILE
-    Write(word - 1);
+    Write(word - 1); //word contains the number of spaces. the number of actual words in a sentence is the number of spaces in the sentence - 1
     Write(vowel);
     Write(letter);
 END
